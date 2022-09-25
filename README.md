@@ -1,6 +1,6 @@
 # Sistema para gerenciamento de vendas em geral e estoque
 
-<p align="justify">Projeto das telas do sistema web SIGEVEENDES</p>
+<p align="justify">Projeto das telas do sistema web SIGEVEENDES.</p>
 
 ## Getting Started
 
