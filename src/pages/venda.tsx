@@ -1,10 +1,10 @@
-import Container from '../components/layout/Container'
+import Template from '../components/layout/Template'
 
 function Venda() {
     return (
-        <Container titulo='VENDA'>
+        <Template titulo='VENDA'>
 
-        </Container>
+        </Template>
     )
 
 }

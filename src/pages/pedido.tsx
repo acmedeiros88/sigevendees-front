@@ -1,9 +1,9 @@
-import Container from '../components/layout/Container'
+import Template from '../components/layout/Template'
 
 function Pedido() {
     return (
-        <Container titulo='PEDIDO'>
-        </Container>
+        <Template titulo='PEDIDO'>
+        </Template>
     )
 
 }

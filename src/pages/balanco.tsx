@@ -1,10 +1,10 @@
-import Container from '../components/layout/Container'
+import Template from '../components/layout/Template'
 
 function Balanco() {
     return (
-        <Container titulo='BALANÇO'>
+        <Template titulo='BALANÇO'>
 
-        </Container>
+        </Template>
     )
 
 }

@@ -1,10 +1,10 @@
-import Container from '../components/layout/Container'
+import Template from '../components/layout/Template'
 
 function Historico() {
     return (
-        <Container titulo='HISTÓRICO'>
+        <Template titulo='HISTÓRICO'>
 
-        </Container>
+        </Template>
     )
 
 }

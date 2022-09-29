@@ -1,15 +1,13 @@
 import React from 'react';
 import {
-  IconButton,
-  Flex,
-  HStack,
-  useColorModeValue,
-  Text,
-  FlexProps,
+    IconButton,
+    Flex,
+    HStack,
+    useColorModeValue,
+    Text,
+    FlexProps,
 } from '@chakra-ui/react';
-import {
-  FiMenu,
-} from 'react-icons/fi';
+import { FiMenu } from 'react-icons/fi';
 
 interface MobileProps extends FlexProps {
     onOpen: () => void;
@@ -18,7 +16,8 @@ interface MobileProps extends FlexProps {
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
     return (
         <Flex
-            w={{ base: 'full'}}
+            name='mobile-nav'
+            w={{ base: 'full' }}
             pos="fixed"
             ml={{ base: 0, md: 60 }}
             px={{ base: 4, md: 4 }}
@@ -27,7 +26,6 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             bg={useColorModeValue('white', 'gray.900')}
             borderBottomWidth="1px"
             borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
-            // justifyContent={{ base: 'space-between', md: 'flex-end' }}
             {...rest}>
             <IconButton
                 display={{ base: 'flex', md: 'none' }}

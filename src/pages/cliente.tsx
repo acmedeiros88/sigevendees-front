@@ -1,10 +1,10 @@
-import Container from '../components/layout/Container'
+import Template from '../components/layout/Template'
 
 function Cliente() {
     return (
-        <Container titulo='CLIENTE'>
+        <Template titulo='CLIENTE'>
 
-        </Container>
+        </Template>
     )
 
 }
