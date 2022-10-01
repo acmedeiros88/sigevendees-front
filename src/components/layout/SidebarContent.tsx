@@ -6,10 +6,8 @@ import {
     Icon,
     useColorModeValue,
     Link,
-    Text,
     BoxProps,
-    FlexProps,
-    Divider,
+    FlexProps
 } from '@chakra-ui/react';
 import {
     FiFile,
@@ -19,7 +17,7 @@ import {
     FiBarChart2,
     FiBook,
     FiLayers,
-    FiLogOut,
+    FiLogOut
 } from 'react-icons/fi';
 import { IconType } from 'react-icons';
 

@@ -1,5 +1,6 @@
 import Template from '../components/layout/Template'
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+import TableEstoque from '../components/TableEstoque'
 
 function Estoque() {
     return (
@@ -18,7 +19,7 @@ function Estoque() {
                         <p>CADSTRAR</p>
                     </TabPanel>
                     <TabPanel>
-                        <p>CONSULTAR</p>
+                        <TableEstoque />
                     </TabPanel>
                 </TabPanels>
             </Tabs>
