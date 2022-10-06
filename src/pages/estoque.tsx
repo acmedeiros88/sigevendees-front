@@ -1,6 +1,14 @@
-import Template from '../components/layout/Template'
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
-import TableEstoque from '../components/TableEstoque'
+import React from 'react';
+import {
+    Tabs,
+    TabList,
+    TabPanels,
+    Tab,
+    TabPanel 
+} from '@chakra-ui/react';
+import Template from '../components/layout/Template';
+import TableEstoque from '../components/TableEstoque';
+import FormCadastroIngrediente from '../components/FormCadastroIngrediente';
 
 function Estoque() {
     return (
@@ -13,10 +21,9 @@ function Estoque() {
                 </TabList>
                 <TabPanels>
                     <TabPanel>
-                        <p>ENTRADA</p>
                     </TabPanel>
                     <TabPanel>
-                        <p>CADSTRAR</p>
+                        <FormCadastroIngrediente />
                     </TabPanel>
                     <TabPanel>
                         <TableEstoque />
@@ -24,8 +31,7 @@ function Estoque() {
                 </TabPanels>
             </Tabs>
         </Template>
-    )
+    );
+};
 
-}
-
-export default Estoque
+export default Estoque;

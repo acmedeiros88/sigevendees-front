@@ -25,7 +25,8 @@ interface LinkItemProps {
     name: string;
     href: string;
     icon: IconType;
-}
+};
+
 const LinkItems: Array<LinkItemProps> = [
     { name: 'Pedido', href: '/pedido', icon: FiFile },
     { name: 'Estoque', href: '/estoque', icon: FiList },
@@ -39,13 +40,13 @@ const LinkItems: Array<LinkItemProps> = [
 
 interface SidebarProps extends BoxProps {
     onClose: () => void;
-}
+};
 
 interface NavItemProps extends FlexProps {
     href: string;
     icon: IconType;
     children: string;
-}
+};
 
 const NavItem = ({ href, icon, children, ...rest }: NavItemProps) => {
     return (
@@ -113,4 +114,4 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     );
 };
 
-export default SidebarContent
+export default SidebarContent;

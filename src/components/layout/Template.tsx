@@ -33,7 +33,7 @@ function Template({ titulo, children }: { titulo: string; children: ReactNode })
                 </Box>
             </Box>
         </Container>
-    )
-}
+    );
+};
 
-export default Template
+export default Template;

@@ -11,7 +11,7 @@ import { FiMenu } from 'react-icons/fi';
 
 interface MobileProps extends FlexProps {
     onOpen: () => void;
-}
+};
 
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
     return (
@@ -50,4 +50,4 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
     );
 };
 
-export default MobileNav
+export default MobileNav;

@@ -60,6 +60,6 @@ function Login() {
       </Stack>
     </Flex>
   );
-}
+};
 
-export default Login
+export default Login;

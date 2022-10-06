@@ -32,6 +32,6 @@ function Sidebar() {
       <MobileNav onOpen={onOpen} />
     </Box>
   );
-}
+};
 
-export default Sidebar
+export default Sidebar;

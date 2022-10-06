@@ -1,12 +1,12 @@
-import Template from '../components/layout/Template'
+import React from 'react';
+import Template from '../components/layout/Template';
 
 function Cliente() {
     return (
         <Template titulo='CLIENTE'>
 
         </Template>
-    )
+    );
+};
 
-}
-
-export default Cliente
+export default Cliente;

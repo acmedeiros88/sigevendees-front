@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     Table,
     Thead,
@@ -7,7 +8,7 @@ import {
     Td,
     TableContainer,
     useColorModeValue
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 
 interface Ingrediente {
     codigo: number;
@@ -16,7 +17,7 @@ interface Ingrediente {
     estoque: string;
     total: string;
     categoria: string;
-}
+};
 
 const RowItens: Array<Ingrediente> = [
     { codigo: 1, nome: 'Farinha de trigo', estoqueMinimo: `${500}g`, estoque: `${500}g`, total: `R$ ${10.00}`, categoria: 'INGREDIENTE' },
@@ -54,12 +55,12 @@ function TableEstoque() {
                 </Thead>
                 <Tbody>
                 {RowItens.map((item) => (
-                    <RowItem {...item}/>
+                    <RowItem key={item.codigo} {...item}/>
                 ))}
                 </Tbody>
             </Table>
         </TableContainer>
-    )
-}
+    );
+};
 
-export default TableEstoque
+export default TableEstoque;
