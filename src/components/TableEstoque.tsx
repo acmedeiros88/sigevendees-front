@@ -7,7 +7,8 @@ import {
     Th,
     Td,
     TableContainer,
-    useColorModeValue
+    useColorModeValue,
+    Box,
 } from '@chakra-ui/react';
 
 interface Ingrediente {
@@ -26,7 +27,7 @@ const RowItens: Array<Ingrediente> = [
     { codigo: 4, nome: 'Pote de 250ml', estoqueMinimo: `${50}und`, estoque: `${500}g`, total: `R$ ${5.00}`, categoria: 'EMBALAGEM' }
 ];
 
-const RowItem = (item : Ingrediente) => {
+const RowItem = (item: Ingrediente) => {
     return (
         <Tr>
             <Td>{item.codigo}</Td>
@@ -41,25 +42,27 @@ const RowItem = (item : Ingrediente) => {
 
 function TableEstoque() {
     return (
-        <TableContainer>
-            <Table variant='striped' bgColor={useColorModeValue('blackalpha.300', 'blackalpha.700')}>
-                <Thead>
-                    <Tr>
-                        <Th>Código</Th>
-                        <Th>Produto</Th>
-                        <Th>Estoque mínimo</Th>
-                        <Th>Estoque atual</Th>
-                        <Th>Valor total</Th>
-                        <Th>Tipo</Th>
-                    </Tr>
-                </Thead>
-                <Tbody>
-                {RowItens.map((item) => (
-                    <RowItem key={item.codigo} {...item}/>
-                ))}
-                </Tbody>
-            </Table>
-        </TableContainer>
+        <Box>
+            <TableContainer overflowY='auto' mt={3}>
+                <Table variant='striped' bgColor={useColorModeValue('blackalpha.300', 'blackalpha.700')}>
+                    <Thead>
+                        <Tr>
+                            <Th>Código</Th>
+                            <Th>Produto</Th>
+                            <Th>Estoque mínimo</Th>
+                            <Th>Estoque atual</Th>
+                            <Th>Valor total</Th>
+                            <Th>Tipo</Th>
+                        </Tr>
+                    </Thead>
+                    <Tbody>
+                        {RowItens.map((item) => (
+                            <RowItem key={item.codigo} {...item} />
+                        ))}
+                    </Tbody>
+                </Table>
+            </TableContainer>
+        </Box>
     );
 };
 

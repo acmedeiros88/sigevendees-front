@@ -9,6 +9,7 @@ import {
 import Template from '../components/layout/Template';
 import TableEstoque from '../components/TableEstoque';
 import FormCadastroIngrediente from '../components/FormCadastroIngrediente';
+import FormEntradaIngrediente from '../components/FormEntradaIngrediente';
 
 function Estoque() {
     return (
@@ -21,6 +22,7 @@ function Estoque() {
                 </TabList>
                 <TabPanels>
                     <TabPanel>
+                        <FormEntradaIngrediente />
                     </TabPanel>
                     <TabPanel>
                         <FormCadastroIngrediente />
