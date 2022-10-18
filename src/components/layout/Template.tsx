@@ -7,20 +7,24 @@ import {
     useColorModeValue
 } from '@chakra-ui/react';
 import Sidebar from './Sidebar';
+import Head from 'next/head';
 
 function Template({ titulo, children }: { titulo: string; children: ReactNode }) {
     return (
         <Container maxW='full'>
+            <Head>
+                <title>SIGEVENDEES</title>
+            </Head>
             <Sidebar />
             <Box
-                as='main'      
+                as='main'
                 pl={6}
                 pr={6}
                 pt='48px'
                 minH="100vh"
                 ml={{ base: 0, md: 60 }}
                 bg={useColorModeValue('gray.50', 'gray.900')}>
-                <Flex 
+                <Flex
                     pb={2}
                     pt={4}
                     mb={4}
