@@ -1,4 +1,6 @@
 import {
+    Button,
+    Flex,
     FormControl,
     FormLabel,
     GridItem,
@@ -7,43 +9,54 @@ import {
     NumberIncrementStepper,
     NumberInput,
     NumberInputField,
-    NumberInputStepper
+    NumberInputStepper,
+    Select
 } from "@chakra-ui/react";
-import { Property } from 'csstype';
 import { ReactNode } from "react";
+
+interface OptionItemProps {
+    descricao: string;
+    value: number;
+};
 
 interface InputProps {
     descLabel: string;
+    descPlaceholder?: string;
     columSpanBase: number;
     columSpanMD: number;
     columSpanLG: number;
-    scale: string;
-    spaceWhite: Property.WhiteSpace;
+};
+
+interface GridProps {
+    props: InputProps;
     children: ReactNode;
 };
 
+interface SelectProps {
+    props: InputProps;
+    options: readonly OptionItemProps[];
+};
 
-const ItemGrid = ({ descLabel, columSpanBase, columSpanMD, columSpanLG, scale, spaceWhite, children }: InputProps) => {
+const ItemGrid = ({ props, children }: GridProps) => {
     return (
-        <GridItem colSpan={{ base: columSpanBase, md: columSpanMD, lg: columSpanLG }}>
+        <GridItem colSpan={{ base: props.columSpanBase, md: props.columSpanMD, lg: props.columSpanLG }}>
             <FormControl>
-                <FormLabel fontSize={scale} whiteSpace={spaceWhite}>{descLabel}</FormLabel>
+                <FormLabel fontSize='sm' whiteSpace='nowrap'>{props.descLabel}</FormLabel>
                 {children}
             </FormControl>
         </GridItem>
     );
 }
 
-const InputNumber = ({ descLabel, columSpanBase, columSpanMD, columSpanLG, scale, spaceWhite }: InputProps) => {
+const InputNumber = ({ descLabel, columSpanBase, columSpanMD, columSpanLG }: InputProps) => {
     return (
         <ItemGrid
-            descLabel={descLabel}
-            columSpanBase={columSpanBase}
-            columSpanMD={columSpanMD}
-            columSpanLG={columSpanLG}
-            scale={scale}
-            spaceWhite={spaceWhite}
-        >
+            props={{
+                descLabel: descLabel,
+                columSpanBase: columSpanBase,
+                columSpanMD: columSpanMD,
+                columSpanLG: columSpanLG
+            }}>
 
             <NumberInput min={1}>
                 <NumberInputField />
@@ -57,20 +70,48 @@ const InputNumber = ({ descLabel, columSpanBase, columSpanMD, columSpanLG, scale
     );
 };
 
-const InputText = ({ descLabel, columSpanBase, columSpanMD, columSpanLG, scale, spaceWhite }: InputProps) => {
+const InputText = ({ descLabel, descPlaceholder, columSpanBase, columSpanMD, columSpanLG }: InputProps) => {
     return (
         <ItemGrid
-            descLabel={descLabel}
-            columSpanBase={columSpanBase}
-            columSpanMD={columSpanMD}
-            columSpanLG={columSpanLG}
-            scale={scale}
-            spaceWhite={spaceWhite}
-        >
-            <Input />
+            props={{
+                descLabel: descLabel,
+                columSpanBase: columSpanBase,
+                columSpanMD: columSpanMD,
+                columSpanLG: columSpanLG
+            }}>
+            <Input placeholder={descPlaceholder} />
 
         </ItemGrid>
     );
 };
 
-export { InputText, InputNumber };
+const InputSelect = ({ props, options }: SelectProps) => {
+    return (
+        <ItemGrid
+            props={{
+                descLabel: props.descLabel,
+                columSpanBase: props.columSpanBase,
+                columSpanMD: props.columSpanMD,
+                columSpanLG: props.columSpanLG
+            }}>
+
+            <Select placeholder='Selecionar...'>
+                {options.map((item) => (
+                    <option key={item.value} value={item.value}>{item.descricao}</option>
+                ))}
+            </Select>
+
+        </ItemGrid>
+    );
+};
+
+const ButtonSubmit = ({ margin_top, space }: { margin_top: number, space: string }) => {
+    return (
+        <Flex mt={margin_top} gap={space}>
+            <Button>Salvar</Button>
+            <Button>Cancelar</Button>
+        </Flex>
+    );
+};
+
+export { InputText, InputNumber, InputSelect, ButtonSubmit };
