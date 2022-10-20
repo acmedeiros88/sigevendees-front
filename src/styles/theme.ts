@@ -2,8 +2,8 @@ import { extendTheme, ChakraTheme } from '@chakra-ui/react'
 
 const customTheme: Partial<ChakraTheme> = {
     config: {
-        initialColorMode: 'dark',
         useSystemColorMode: false,
+        initialColorMode: 'light',
     },
     fonts: {
         heading: 'Roboto',

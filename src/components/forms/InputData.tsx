@@ -10,7 +10,8 @@ import {
     NumberInput,
     NumberInputField,
     NumberInputStepper,
-    Select
+    Select,
+    Textarea
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
@@ -57,7 +58,6 @@ const InputNumber = ({ descLabel, columSpanBase, columSpanMD, columSpanLG }: Inp
                 columSpanMD: columSpanMD,
                 columSpanLG: columSpanLG
             }}>
-
             <NumberInput min={1}>
                 <NumberInputField />
                 <NumberInputStepper>
@@ -65,7 +65,6 @@ const InputNumber = ({ descLabel, columSpanBase, columSpanMD, columSpanLG }: Inp
                     <NumberDecrementStepper />
                 </NumberInputStepper>
             </NumberInput>
-
         </ItemGrid>
     );
 };
@@ -80,7 +79,6 @@ const InputText = ({ descLabel, descPlaceholder, columSpanBase, columSpanMD, col
                 columSpanLG: columSpanLG
             }}>
             <Input placeholder={descPlaceholder} />
-
         </ItemGrid>
     );
 };
@@ -94,24 +92,31 @@ const InputSelect = ({ props, options }: SelectProps) => {
                 columSpanMD: props.columSpanMD,
                 columSpanLG: props.columSpanLG
             }}>
-
             <Select placeholder='Selecionar...'>
                 {options.map((item) => (
                     <option key={item.value} value={item.value}>{item.descricao}</option>
                 ))}
             </Select>
-
         </ItemGrid>
     );
 };
 
-const ButtonSubmit = ({ margin_top, space }: { margin_top: number, space: string }) => {
+const InputTextarea = ({ descLabel }: { descLabel: string }) => {
     return (
-        <Flex mt={margin_top} gap={space}>
+        <FormControl>
+            <FormLabel fontSize='sm' whiteSpace='nowrap'>{descLabel}</FormLabel>
+            <Textarea size='2xl' resize='none' />
+        </FormControl>
+    );
+};
+
+const ButtonSubmit = ({ margin_top }: { margin_top: number }) => {
+    return (
+        <Flex mt={margin_top} gap='2'>
             <Button>Salvar</Button>
             <Button>Cancelar</Button>
         </Flex>
     );
 };
 
-export { InputText, InputNumber, InputSelect, ButtonSubmit };
+export { InputText, InputNumber, InputSelect, InputTextarea, ButtonSubmit };

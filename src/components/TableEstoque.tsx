@@ -1,4 +1,3 @@
-import React from 'react';
 import {
     Table,
     Thead,
@@ -43,6 +42,7 @@ const RowItem = (item: Ingrediente) => {
 function TableEstoque() {
     return (
         <Box>
+
             <TableContainer overflowY='auto' mt={3}>
                 <Table variant='striped' bgColor={useColorModeValue('blackalpha.300', 'blackalpha.700')}>
                     <Thead>
@@ -62,6 +62,7 @@ function TableEstoque() {
                     </Tbody>
                 </Table>
             </TableContainer>
+            
         </Box>
     );
 };

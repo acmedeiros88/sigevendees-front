@@ -1,4 +1,3 @@
-import React, { ReactNode } from 'react';
 import {
     Box,
     Container,
@@ -6,6 +5,7 @@ import {
     Flex,
     useColorModeValue
 } from '@chakra-ui/react';
+import React, { ReactNode } from 'react';
 import Sidebar from './Sidebar';
 import Head from 'next/head';
 
@@ -20,7 +20,7 @@ function Template({ titulo, children }: { titulo: string; children: ReactNode })
                 as='main'
                 pl={6}
                 pr={6}
-                pt='48px'
+                pt='42px'
                 minH="100vh"
                 ml={{ base: 0, md: 60 }}
                 bg={useColorModeValue('gray.50', 'gray.900')}>

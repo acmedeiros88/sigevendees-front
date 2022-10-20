@@ -1,9 +1,6 @@
-import React from 'react';
 import {
     SimpleGrid,
     HStack,
-    Button,
-    Flex,
     Box
 } from '@chakra-ui/react';
 import {
@@ -32,16 +29,15 @@ const undMedidaItems: Array<itemProps> = [
 function FormCadastroIngrediente() {
     return (
         <Box>
-            <HStack mt={12} alignItems='flex-start'>
-                <SimpleGrid columns={6} columnGap={3} rowGap={6}>
 
+            <HStack mt={2}>
+                <SimpleGrid columns={6} columnGap={3} rowGap={6} minW='full'>
                     <InputText
                         descLabel='Descrição'
                         columSpanBase={6}
                         columSpanMD={6}
                         columSpanLG={3}
                     />
-
                     <InputSelect
                         props={{
                             descLabel: 'Tipo do produto',
@@ -51,14 +47,12 @@ function FormCadastroIngrediente() {
                         }}
                         options={TipoProdutoItems}
                     />
-
                     <InputNumber
                         descLabel='Estoque mínimo'
                         columSpanBase={3}
                         columSpanMD={3}
                         columSpanLG={1}
                     />
-
                     <InputSelect
                         props={{
                             descLabel: 'Unidade de medida',
@@ -68,10 +62,11 @@ function FormCadastroIngrediente() {
                         }}
                         options={undMedidaItems}
                     />
-
                 </SimpleGrid>
             </HStack>
-            <ButtonSubmit margin_top={10} space='2' />
+
+            <ButtonSubmit margin_top={10} />
+            
         </Box>
     );
 };

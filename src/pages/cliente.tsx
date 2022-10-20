@@ -8,6 +8,7 @@ import {
 import React from 'react';
 import FormCadastroCliente from '../components/FormCadastroCliente';
 import Template from '../components/layout/Template';
+import TableGerenciaCliente from '../components/TableGerenciaCliente';
 
 function Cliente() {
     return (
@@ -21,7 +22,8 @@ function Cliente() {
                     <TabPanel>
                         <FormCadastroCliente />
                     </TabPanel>
-                    <TabPanel>                     
+                    <TabPanel>
+                        <TableGerenciaCliente />
                     </TabPanel>
                 </TabPanels>
             </Tabs>

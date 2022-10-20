@@ -11,7 +11,6 @@ import {
     Thead,
     Tr,
     Td,
-    Flex,
     Box
 } from '@chakra-ui/react';
 import {
@@ -35,9 +34,9 @@ const produtos: Array<itemProps> = [
 function FormEntradaIngrediente() {
     return (
         <Box>
-            <HStack mt={12} alignItems='flex-start'>
-                <SimpleGrid columns={8} columnGap={3} rowGap={6}>
 
+            <HStack mt={2}>
+                <SimpleGrid columns={8} columnGap={3} rowGap={6} minW='full'>
                     <InputSelect
                         props={{
                             descLabel: 'Produto',
@@ -47,14 +46,12 @@ function FormEntradaIngrediente() {
                         }}
                         options={produtos}
                     />
-
                     <InputNumber
                         descLabel='Quantidade'
                         columSpanBase={3}
                         columSpanMD={3}
                         columSpanLG={1}
                     />
-
                     <InputText
                         descLabel='Custo'
                         columSpanBase={3}
@@ -62,14 +59,12 @@ function FormEntradaIngrediente() {
                         columSpanLG={1}
                         descPlaceholder='R$'
                     />
-
                     <GridItem mt={7} colSpan={{ base: 2, md: 2, lg: 1 }}>
                         <Button>Adicionar</Button>
                     </GridItem>
-
                 </SimpleGrid>
-
             </HStack>
+
             <TableContainer overflowY='auto' mt={8}>
                 <Table size='sm' variant='striped' bgColor={useColorModeValue('blackalpha.300', 'blackalpha.700')}>
                     <Thead>
@@ -106,7 +101,9 @@ function FormEntradaIngrediente() {
                     </Tbody>
                 </Table>
             </TableContainer>
-            <ButtonSubmit margin_top={5} space='2' />
+
+            <ButtonSubmit margin_top={5} />
+
         </Box>
     );
 };
