@@ -11,7 +11,8 @@ import {
     Thead,
     Tr,
     Td,
-    Box
+    Box,
+    Icon
 } from '@chakra-ui/react';
 import {
     InputText,
@@ -19,6 +20,7 @@ import {
     InputSelect,
     ButtonSubmit
 } from '../components/forms/InputData';
+import { FiTrash2, FiXSquare } from 'react-icons/fi';
 
 interface itemProps {
     descricao: string;
@@ -73,7 +75,7 @@ function FormEntradaIngrediente() {
                             <Th>Produto</Th>
                             <Th>Qtd</Th>
                             <Th>Custo R$</Th>
-                            <Th>X</Th>
+                            <Th><Icon as={FiTrash2} /></Th>
                         </Tr>
                     </Thead>
                     <Tbody>
@@ -82,21 +84,21 @@ function FormEntradaIngrediente() {
                             <Td>Farinha</Td>
                             <Td>100g</Td>
                             <Td>R$ 10,00</Td>
-                            <Td>x</Td>
+                            <Td><Icon as={FiXSquare} /></Td>
                         </Tr>
                         <Tr>
                             <Td>2</Td>
                             <Td>Leite</Td>
                             <Td>1000ml</Td>
                             <Td>R$ 2,50</Td>
-                            <Td>x</Td>
+                            <Td><Icon as={FiXSquare} /></Td>
                         </Tr>
                         <Tr>
                             <Td>3</Td>
                             <Td>Ovos</Td>
                             <Td>30und</Td>
                             <Td>R$ 15,00</Td>
-                            <Td>x</Td>
+                            <Td><Icon as={FiXSquare} /></Td>
                         </Tr>
                     </Tbody>
                 </Table>

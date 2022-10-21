@@ -26,6 +26,7 @@ interface InputProps {
     columSpanBase: number;
     columSpanMD: number;
     columSpanLG: number;
+    read_on?: boolean;
 };
 
 interface GridProps {
@@ -49,7 +50,7 @@ const ItemGrid = ({ props, children }: GridProps) => {
     );
 }
 
-const InputNumber = ({ descLabel, columSpanBase, columSpanMD, columSpanLG }: InputProps) => {
+const InputNumber = ({ descLabel, descPlaceholder, columSpanBase, columSpanMD, columSpanLG }: InputProps) => {
     return (
         <ItemGrid
             props={{
@@ -59,7 +60,7 @@ const InputNumber = ({ descLabel, columSpanBase, columSpanMD, columSpanLG }: Inp
                 columSpanLG: columSpanLG
             }}>
             <NumberInput min={1}>
-                <NumberInputField />
+                <NumberInputField placeholder={descPlaceholder} />
                 <NumberInputStepper>
                     <NumberIncrementStepper />
                     <NumberDecrementStepper />
@@ -69,7 +70,7 @@ const InputNumber = ({ descLabel, columSpanBase, columSpanMD, columSpanLG }: Inp
     );
 };
 
-const InputText = ({ descLabel, descPlaceholder, columSpanBase, columSpanMD, columSpanLG }: InputProps) => {
+const InputText = ({ descLabel, descPlaceholder, columSpanBase, columSpanMD, columSpanLG, read_on }: InputProps) => {
     return (
         <ItemGrid
             props={{
@@ -78,7 +79,7 @@ const InputText = ({ descLabel, descPlaceholder, columSpanBase, columSpanMD, col
                 columSpanMD: columSpanMD,
                 columSpanLG: columSpanLG
             }}>
-            <Input placeholder={descPlaceholder} />
+            <Input placeholder={descPlaceholder} readOnly={read_on} />
         </ItemGrid>
     );
 };
