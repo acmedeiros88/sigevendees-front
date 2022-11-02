@@ -23,7 +23,8 @@ import {
     InputSelect,
     ButtonSubmit,
     InputText,
-    OptionItem
+    OptionItem,
+    InputDate
 } from '../components/forms/InputData';
 
 const produtos: Array<OptionItem> = [
@@ -37,6 +38,25 @@ function FormCadastroPedido() {
         <Box>
 
             <HStack>
+                <SimpleGrid columns={12} columnGap={3} rowGap={6} minW='full'>
+                    <InputText
+                        descLabel='Cliente'
+                        descPlaceholder='Digite o nome ou telefone'
+                        columSpanBase={8}
+                        columSpanMD={8}
+                        columSpanLG={10}
+                    />
+                    <InputDate
+                        descLabel='Entrega'
+                        descPlaceholder='Selecione data de entrega'
+                        columSpanBase={4}
+                        columSpanMD={4}
+                        columSpanLG={2}
+                    />
+                </SimpleGrid>
+            </HStack>
+
+            <HStack mt={4}>
                 <SimpleGrid columns={12} columnGap={3} rowGap={6} minW='full'>
                     <InputSelect
                         descLabel='Produto'

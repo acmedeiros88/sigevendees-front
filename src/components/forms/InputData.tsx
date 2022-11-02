@@ -99,6 +99,19 @@ const InputTextarea = ({ descLabel }: { descLabel: string }) => {
     );
 };
 
+const InputDate = ({ descLabel, descPlaceholder, columSpanBase, columSpanMD, columSpanLG, read_on }: InputProps) => {
+    return (
+        <ItemGrid
+            descLabel={descLabel}
+            columSpanBase={columSpanBase}
+            columSpanMD={columSpanMD}
+            columSpanLG={columSpanLG}
+        >
+            <Input placeholder={descPlaceholder} size="md" type="date" />
+        </ItemGrid>
+    );
+};
+
 const ButtonSubmit = ({ margin_top }: { margin_top: number }) => {
     return (
         <Flex mt={margin_top} gap='2'>
@@ -108,4 +121,4 @@ const ButtonSubmit = ({ margin_top }: { margin_top: number }) => {
     );
 };
 
-export { InputText, InputNumber, InputSelect, InputTextarea, ButtonSubmit };
+export { InputText, InputNumber, InputSelect, InputTextarea, ButtonSubmit, InputDate };

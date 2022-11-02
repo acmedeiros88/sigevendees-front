@@ -8,7 +8,7 @@ import {
     Td,
     TableContainer,
     useColorModeValue,
-    Box,
+    Box
 } from '@chakra-ui/react';
 
 interface Ingrediente {

@@ -8,6 +8,7 @@ import {
 } from '@chakra-ui/react';
 import FormCadastroPedido from '../components/FormCadastroPedido';
 import Template from '../components/layout/Template';
+import TableGerenciaPedido from '../components/TableGerenciaPedico';
 
 function Pedido() {
     return (
@@ -16,17 +17,13 @@ function Pedido() {
                 <TabList as='nav'>
                     <Tab>Cadastrar</Tab>
                     <Tab>Gerenciar</Tab>
-                    <Tab>Consultar</Tab>
                 </TabList>
                 <TabPanels>
                     <TabPanel>
                         <FormCadastroPedido />
                     </TabPanel>
                     <TabPanel>
-                        
-                    </TabPanel>
-                    <TabPanel>
-                        
+                        <TableGerenciaPedido />
                     </TabPanel>
                 </TabPanels>
             </Tabs>
