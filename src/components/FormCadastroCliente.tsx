@@ -1,28 +1,25 @@
+import React from 'react';
 import {
     Box,
     HStack,
     SimpleGrid
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 import {
     InputText,
     InputNumber,
     InputSelect,
     InputTextarea,
-    ButtonSubmit
+    ButtonSubmit,
+    OptionItem
 } from '../components/forms/InputData';
 
-interface itemProps {
-    descricao: string;
-    value: number;
-};
-
-const cidades: Array<itemProps> = [
+const cidades: Array<OptionItem> = [
     { descricao: 'Foz do Iguaçu', value: 0 },
     { descricao: 'Medianeira', value: 1 },
     { descricao: 'Cascavel', value: 2 }
 ];
 
-const estados: Array<itemProps> = [
+const estados: Array<OptionItem> = [
     { descricao: 'Paraná', value: 0 },
     { descricao: 'Santa Catarina', value: 1 },
     { descricao: 'Rio Grande do Sul', value: 2 }
@@ -81,21 +78,17 @@ function FormCadastroCliente() {
             <HStack mt={4}>
                 <SimpleGrid columns={12} columnGap={3} rowGap={6} minW='full'>
                     <InputSelect
-                        props={{
-                            descLabel: 'Cidade',
-                            columSpanBase: 12,
-                            columSpanMD: 12,
-                            columSpanLG: 6
-                        }}
+                        descLabel='Cidade'
+                        columSpanBase={12}
+                        columSpanMD={12}
+                        columSpanLG={6}
                         options={cidades}
                     />
                     <InputSelect
-                        props={{
-                            descLabel: 'Estado',
-                            columSpanBase: 6,
-                            columSpanMD: 6,
-                            columSpanLG: 2
-                        }}
+                        descLabel='Estado'
+                        columSpanBase={6}
+                        columSpanMD={6}
+                        columSpanLG={2}
                         options={estados}
                     />
                     <InputNumber

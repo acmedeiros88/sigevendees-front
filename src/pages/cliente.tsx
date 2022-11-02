@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     Tab,
     TabList,
@@ -5,7 +6,6 @@ import {
     TabPanels,
     Tabs
 } from '@chakra-ui/react';
-import React from 'react';
 import FormCadastroCliente from '../components/FormCadastroCliente';
 import Template from '../components/layout/Template';
 import TableGerenciaCliente from '../components/TableGerenciaCliente';
@@ -29,6 +29,6 @@ function Cliente() {
             </Tabs>
         </Template>
     );
-};
+}
 
 export default Cliente;

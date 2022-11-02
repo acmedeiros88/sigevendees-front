@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     Box,
     Button,
@@ -13,31 +14,27 @@ import {
     Thead,
     Tr,
     Icon
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 import {
     InputText,
     InputNumber,
     InputSelect,
-    ButtonSubmit
+    ButtonSubmit,
+    OptionItem
 } from '../components/forms/InputData';
 import { FiTrash2, FiXSquare } from 'react-icons/fi';
 
-interface itemProps {
-    descricao: string;
-    value: number;
-};
-
-const tiposReceita: Array<itemProps> = [
+const tiposReceita: Array<OptionItem> = [
     { descricao: 'DOCE', value: 0 },
     { descricao: 'SALGADO', value: 1 }
 ];
 
-const undsMedidaAvenda: Array<itemProps> = [
+const undsMedidaAvenda: Array<OptionItem> = [
     { descricao: 'UND', value: 0 },
     { descricao: 'CENTO', value: 1 }
 ];
 
-const produtos: Array<itemProps> = [
+const produtos: Array<OptionItem> = [
     { descricao: 'Farinha', value: 0 },
     { descricao: 'Leite', value: 1 },
     { descricao: 'Pote 250ml', value: 2 }
@@ -61,22 +58,18 @@ function FormCadastroReceita() {
             <HStack mt={4}>
                 <SimpleGrid columns={12} columnGap={3} rowGap={6} minW='full'>
                     <InputSelect
-                        props={{
-                            descLabel: 'Tipo',
-                            columSpanBase: 12,
-                            columSpanMD: 12,
-                            columSpanLG: 3
-                        }}
+                        descLabel='Tipo'
+                        columSpanBase={12}
+                        columSpanMD={12}
+                        columSpanLG={3}
                         options={tiposReceita}
                     />
 
                     <InputSelect
-                        props={{
-                            descLabel: 'Venda em',
-                            columSpanBase: 6,
-                            columSpanMD: 6,
-                            columSpanLG: 3
-                        }}
+                        descLabel='Venda em'
+                        columSpanBase={6}
+                        columSpanMD={6}
+                        columSpanLG={3}
                         options={undsMedidaAvenda}
                     />
 
@@ -109,12 +102,10 @@ function FormCadastroReceita() {
             <HStack mt={4}>
                 <SimpleGrid columns={12} columnGap={3} rowGap={6} minW='full'>
                     <InputSelect
-                        props={{
-                            descLabel: 'Ingrediente/Embalagen',
-                            columSpanBase: 12,
-                            columSpanMD: 12,
-                            columSpanLG: 8
-                        }}
+                        descLabel='Ingrediente/Embalagen'
+                        columSpanBase={12}
+                        columSpanMD={12}
+                        columSpanLG={8}
                         options={produtos}
                     />
 
@@ -208,6 +199,6 @@ function FormCadastroReceita() {
 
         </Box>
     );
-};
+}
 
 export default FormCadastroReceita;

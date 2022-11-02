@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     Table,
     Thead,
@@ -23,7 +24,7 @@ interface Receita {
     venda: string;
     lucro: string;
     detalhes: IconType;
-};
+}
 
 const Receitas: Array<Receita> = [
     { codigo: 1, nome: 'Bolo de chocolate', tipo: 'DOCE', venda_em: 'g', rendimento: `${1500} g`, total_custo: `R$ ${100.00}`, venda: `R$ ${10.00}`, lucro: `R$ ${5.00}`, detalhes: FiBookOpen },
@@ -77,6 +78,6 @@ function TableConsultaReceita() {
 
         </Box>
     );
-};
+}
 
 export default TableConsultaReceita;

@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     Table,
     Thead,
@@ -17,7 +18,7 @@ interface Ingrediente {
     estoque: string;
     total: string;
     categoria: string;
-};
+}
 
 const Ingredientes: Array<Ingrediente> = [
     { codigo: 1, nome: 'Farinha de trigo', estoqueMinimo: `${500}g`, estoque: `${500}g`, total: `R$ ${10.00}`, categoria: 'INGREDIENTE' },
@@ -65,6 +66,6 @@ function TableEstoque() {
 
         </Box>
     );
-};
+}
 
 export default TableEstoque;

@@ -1,3 +1,4 @@
+import React, { ReactNode } from 'react';
 import {
     Button,
     Flex,
@@ -5,20 +6,16 @@ import {
     FormLabel,
     GridItem,
     Input,
-    NumberDecrementStepper,
-    NumberIncrementStepper,
     NumberInput,
     NumberInputField,
-    NumberInputStepper,
     Select,
     Textarea
-} from "@chakra-ui/react";
-import { ReactNode } from "react";
+} from '@chakra-ui/react';
 
-interface OptionItemProps {
+export interface OptionItem {
     descricao: string;
     value: number;
-};
+}
 
 interface InputProps {
     descLabel: string;
@@ -27,23 +24,21 @@ interface InputProps {
     columSpanMD: number;
     columSpanLG: number;
     read_on?: boolean;
-};
+}
 
-interface GridProps {
-    props: InputProps;
+interface GridProps extends InputProps {
     children: ReactNode;
-};
+}
 
-interface SelectProps {
-    props: InputProps;
-    options: readonly OptionItemProps[];
-};
+interface SelectProps extends InputProps {
+    options: readonly OptionItem[];
+}
 
-const ItemGrid = ({ props, children }: GridProps) => {
+const ItemGrid = ({ columSpanBase, columSpanMD, columSpanLG, descLabel, children }: GridProps) => {
     return (
-        <GridItem colSpan={{ base: props.columSpanBase, md: props.columSpanMD, lg: props.columSpanLG }}>
+        <GridItem colSpan={{ base: columSpanBase, md: columSpanMD, lg: columSpanLG }}>
             <FormControl>
-                <FormLabel fontSize='sm' whiteSpace='nowrap'>{props.descLabel}</FormLabel>
+                <FormLabel fontSize='sm' whiteSpace='nowrap'>{descLabel}</FormLabel>
                 {children}
             </FormControl>
         </GridItem>
@@ -53,18 +48,13 @@ const ItemGrid = ({ props, children }: GridProps) => {
 const InputNumber = ({ descLabel, descPlaceholder, columSpanBase, columSpanMD, columSpanLG }: InputProps) => {
     return (
         <ItemGrid
-            props={{
-                descLabel: descLabel,
-                columSpanBase: columSpanBase,
-                columSpanMD: columSpanMD,
-                columSpanLG: columSpanLG
-            }}>
+            descLabel={descLabel}
+            columSpanBase={columSpanBase}
+            columSpanMD={columSpanMD}
+            columSpanLG={columSpanLG}
+        >
             <NumberInput min={1}>
                 <NumberInputField placeholder={descPlaceholder} />
-                <NumberInputStepper>
-                    <NumberIncrementStepper />
-                    <NumberDecrementStepper />
-                </NumberInputStepper>
             </NumberInput>
         </ItemGrid>
     );
@@ -73,27 +63,25 @@ const InputNumber = ({ descLabel, descPlaceholder, columSpanBase, columSpanMD, c
 const InputText = ({ descLabel, descPlaceholder, columSpanBase, columSpanMD, columSpanLG, read_on }: InputProps) => {
     return (
         <ItemGrid
-            props={{
-                descLabel: descLabel,
-                columSpanBase: columSpanBase,
-                columSpanMD: columSpanMD,
-                columSpanLG: columSpanLG
-            }}>
+            descLabel={descLabel}
+            columSpanBase={columSpanBase}
+            columSpanMD={columSpanMD}
+            columSpanLG={columSpanLG}
+        >
             <Input placeholder={descPlaceholder} readOnly={read_on} />
         </ItemGrid>
     );
 };
 
-const InputSelect = ({ props, options }: SelectProps) => {
+const InputSelect = ({ descLabel, descPlaceholder, columSpanBase, columSpanMD, columSpanLG, options }: SelectProps) => {
     return (
         <ItemGrid
-            props={{
-                descLabel: props.descLabel,
-                columSpanBase: props.columSpanBase,
-                columSpanMD: props.columSpanMD,
-                columSpanLG: props.columSpanLG
-            }}>
-            <Select placeholder='Selecionar...'>
+            descLabel={descLabel}
+            columSpanBase={columSpanBase}
+            columSpanMD={columSpanMD}
+            columSpanLG={columSpanLG}
+        >
+            <Select placeholder={descPlaceholder != null ? descPlaceholder : 'Selecionar...'}>
                 {options.map((item) => (
                     <option key={item.value} value={item.value}>{item.descricao}</option>
                 ))}

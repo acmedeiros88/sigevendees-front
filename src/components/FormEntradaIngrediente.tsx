@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     Button,
     GridItem,
@@ -18,16 +19,12 @@ import {
     InputText,
     InputNumber,
     InputSelect,
-    ButtonSubmit
+    ButtonSubmit,
+    OptionItem
 } from '../components/forms/InputData';
 import { FiTrash2, FiXSquare } from 'react-icons/fi';
 
-interface itemProps {
-    descricao: string;
-    value: number;
-};
-
-const produtos: Array<itemProps> = [
+const produtos: Array<OptionItem> = [
     { descricao: 'Farinha', value: 0 },
     { descricao: 'Leite', value: 1 },
     { descricao: 'Chocolate', value: 2 }
@@ -40,12 +37,10 @@ function FormEntradaIngrediente() {
             <HStack mt={2}>
                 <SimpleGrid columns={8} columnGap={3} rowGap={6} minW='full'>
                     <InputSelect
-                        props={{
-                            descLabel: 'Produto',
-                            columSpanBase: 8,
-                            columSpanMD: 8,
-                            columSpanLG: 5
-                        }}
+                        descLabel='Produto'
+                        columSpanBase={8}
+                        columSpanMD={8}
+                        columSpanLG={5}
                         options={produtos}
                     />
                     <InputNumber
@@ -108,6 +103,6 @@ function FormEntradaIngrediente() {
 
         </Box>
     );
-};
+}
 
 export default FormEntradaIngrediente;

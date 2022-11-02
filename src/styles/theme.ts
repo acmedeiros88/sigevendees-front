@@ -9,6 +9,6 @@ const customTheme: Partial<ChakraTheme> = {
         heading: 'Roboto',
         bady: 'Roboto',
     },
-};
+}
 
 export default extendTheme(customTheme);

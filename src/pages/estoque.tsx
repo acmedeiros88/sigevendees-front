@@ -34,6 +34,6 @@ function Estoque() {
             </Tabs>
         </Template>
     );
-};
+}
 
 export default Estoque;

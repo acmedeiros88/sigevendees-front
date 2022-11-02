@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     Tab,
     TabList,
@@ -28,6 +29,6 @@ function Receita() {
             </Tabs>
         </Template>
     );
-};
+}
 
 export default Receita;

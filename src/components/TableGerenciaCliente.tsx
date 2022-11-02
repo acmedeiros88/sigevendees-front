@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     Box,
     useColorModeValue,
@@ -25,7 +26,7 @@ interface Cliente {
     observacao: string;
     editar: IconType;
     excluir: IconType;
-};
+}
 
 const Clientes: Array<Cliente> = [
     { codigo: 1, nome: 'Maria Aparecida Cardoso', telefone: '045999999999', email: 'cliente@email.com', endereco: 'Rua Canindé, 1900 - Morumbi', observacao: 'cliente amigo', editar: FiEdit, excluir: FiTrash2 },
@@ -74,6 +75,6 @@ function TableGerenciaCliente() {
             </TableContainer>
         </Box>
     );
-};
+}
 
 export default TableGerenciaCliente;

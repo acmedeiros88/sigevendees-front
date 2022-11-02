@@ -7,6 +7,6 @@ function Balanco() {
 
         </Template>
     );
-};
+}
 
 export default Balanco;

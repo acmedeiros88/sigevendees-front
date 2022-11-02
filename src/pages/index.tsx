@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Flex,
   Box,
@@ -9,7 +10,6 @@ import {
   Link,
   Button,
   Heading,
-  Text,
   useColorModeValue,
 } from '@chakra-ui/react';
 
@@ -52,7 +52,7 @@ function Login() {
                 _hover={{
                   bg: 'blue.500',
                 }}>
-                  <Link href='/pedido'>Sign in</Link>
+                <Link href='/pedido'>Sign in</Link>
               </Button>
             </Stack>
           </Stack>
@@ -60,6 +60,6 @@ function Login() {
       </Stack>
     </Flex>
   );
-};
+}
 
 export default Login;

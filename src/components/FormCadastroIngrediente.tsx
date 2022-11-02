@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     SimpleGrid,
     HStack,
@@ -7,20 +8,16 @@ import {
     InputText,
     InputNumber,
     InputSelect,
-    ButtonSubmit
+    ButtonSubmit,
+    OptionItem
 } from '../components/forms/InputData';
 
-interface itemProps {
-    descricao: string;
-    value: number;
-};
-
-const TipoProdutoItems: Array<itemProps> = [
+const TipoProdutoItems: Array<OptionItem> = [
     { descricao: 'INGREDIENTE', value: 0 },
     { descricao: 'EMPABALGEM', value: 1 }
 ];
 
-const undMedidaItems: Array<itemProps> = [
+const undMedidaItems: Array<OptionItem> = [
     { descricao: 'Unidade (und)', value: 0 },
     { descricao: 'Gramas (g)', value: 1 },
     { descricao: 'Mililitros (ml)', value: 2 }
@@ -39,12 +36,10 @@ function FormCadastroIngrediente() {
                         columSpanLG={3}
                     />
                     <InputSelect
-                        props={{
-                            descLabel: 'Tipo do produto',
-                            columSpanBase: 6,
-                            columSpanMD: 6,
-                            columSpanLG: 1
-                        }}
+                        descLabel='Tipo do produto'
+                        columSpanBase={6}
+                        columSpanMD={6}
+                        columSpanLG={1}
                         options={TipoProdutoItems}
                     />
                     <InputNumber
@@ -54,21 +49,19 @@ function FormCadastroIngrediente() {
                         columSpanLG={1}
                     />
                     <InputSelect
-                        props={{
-                            descLabel: 'Unidade de medida',
-                            columSpanBase: 3,
-                            columSpanMD: 3,
-                            columSpanLG: 1
-                        }}
+                        descLabel='Unidade de medida'
+                        columSpanBase={3}
+                        columSpanMD={3}
+                        columSpanLG={1}
                         options={undMedidaItems}
                     />
                 </SimpleGrid>
             </HStack>
 
             <ButtonSubmit margin_top={10} />
-            
+
         </Box>
     );
-};
+}
 
 export default FormCadastroIngrediente;
