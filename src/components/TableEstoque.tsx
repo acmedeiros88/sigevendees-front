@@ -38,7 +38,7 @@ const RowItem = (Ingrediente: Ingrediente) => {
             <Td>{Ingrediente.categoria}</Td>
         </Tr>
     );
-};
+}
 
 function TableEstoque() {
     return (

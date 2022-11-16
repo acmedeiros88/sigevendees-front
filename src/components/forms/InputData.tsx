@@ -107,7 +107,7 @@ const InputDate = ({ descLabel, descPlaceholder, columSpanBase, columSpanMD, col
             columSpanMD={columSpanMD}
             columSpanLG={columSpanLG}
         >
-            <Input placeholder={descPlaceholder} size="md" type="date" />
+            <Input placeholder={descPlaceholder} size="md" type="date" readOnly={read_on} />
         </ItemGrid>
     );
 };

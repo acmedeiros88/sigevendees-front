@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Box,
   Drawer,
@@ -24,7 +25,7 @@ function Sidebar() {
         onClose={onClose}
         returnFocusOnClose={false}
         onOverlayClick={onClose}
-        size="full">
+        size="xs">
         <DrawerContent>
           <SidebarContent onClose={onClose} />
         </DrawerContent>
@@ -32,6 +33,6 @@ function Sidebar() {
       <MobileNav onOpen={onOpen} />
     </Box>
   );
-};
+}
 
 export default Sidebar;

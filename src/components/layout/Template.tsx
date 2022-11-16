@@ -1,3 +1,4 @@
+import React, { ReactNode } from 'react';
 import {
     Box,
     Container,
@@ -5,7 +6,6 @@ import {
     Flex,
     useColorModeValue
 } from '@chakra-ui/react';
-import React, { ReactNode } from 'react';
 import Sidebar from './Sidebar';
 import Head from 'next/head';
 
@@ -38,6 +38,6 @@ function Template({ titulo, children }: { titulo: string; children: ReactNode })
             </Box>
         </Container>
     );
-};
+}
 
 export default Template;

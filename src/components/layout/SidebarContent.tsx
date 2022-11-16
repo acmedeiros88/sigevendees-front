@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     Box,
     CloseButton,
@@ -24,7 +25,7 @@ interface LinkItemProps {
     name: string;
     href: string;
     icon: IconType;
-};
+}
 
 const LinkItems: Array<LinkItemProps> = [
     { name: 'Pedido', href: '/pedido', icon: FiFile },
@@ -39,13 +40,13 @@ const LinkItems: Array<LinkItemProps> = [
 
 interface SidebarProps extends BoxProps {
     onClose: () => void;
-};
+}
 
 interface NavItemProps extends FlexProps {
     href: string;
     icon: IconType;
     children: string;
-};
+}
 
 const NavItem = ({ href, icon, children, ...rest }: NavItemProps) => {
     return (
@@ -78,7 +79,7 @@ const NavItem = ({ href, icon, children, ...rest }: NavItemProps) => {
             </Link>
         </Box>
     );
-};
+}
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     return (
@@ -97,7 +98,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
                 mx="8"
                 alignItems="center"
                 justifyContent="space-between">
-                <Link href='#' fontSize="2xl" fontFamily="monospace" mb={6} fontWeight="bold" style={{ textDecoration: 'none'}}>
+                <Link href='#' fontSize="2xl" fontFamily="monospace" mb={6} fontWeight="bold" style={{ textDecoration: 'none' }}>
                     SIGEVENDEES
                 </Link>
                 <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
@@ -111,6 +112,6 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             </Box>
         </Box>
     );
-};
+}
 
 export default SidebarContent;
