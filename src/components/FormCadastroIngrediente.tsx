@@ -9,18 +9,18 @@ import {
     InputNumber,
     InputSelect,
     ButtonSubmit,
-    OptionItem
+    Option
 } from '../components/forms/InputData';
 
-const TipoProdutoItems: Array<OptionItem> = [
-    { descricao: 'INGREDIENTE', value: 0 },
-    { descricao: 'EMPABALGEM', value: 1 }
+const TipoProdutoItems: Array<Option> = [
+    { value: 0, label: 'INGREDIENTE' },
+    { value: 1, label: 'EMPABALGEM' }
 ];
 
-const undMedidaItems: Array<OptionItem> = [
-    { descricao: 'Unidade (und)', value: 0 },
-    { descricao: 'Gramas (g)', value: 1 },
-    { descricao: 'Mililitros (ml)', value: 2 }
+const undMedidaItems: Array<Option> = [
+    { value: 0, label: 'Unidade (und)'},
+    { value: 1, label: 'Gramas (g)' },
+    { value: 2, label: 'Mililitros (ml)' }
 ];
 
 function FormCadastroIngrediente() {
@@ -36,6 +36,7 @@ function FormCadastroIngrediente() {
                         columSpanLG={3}
                     />
                     <InputSelect
+                        name='tipoProdutoEstoque'
                         descLabel='Tipo do produto'
                         columSpanBase={6}
                         columSpanMD={6}
@@ -49,6 +50,7 @@ function FormCadastroIngrediente() {
                         columSpanLG={1}
                     />
                     <InputSelect
+                        name='unidadeMedida'
                         descLabel='Unidade de medida'
                         columSpanBase={3}
                         columSpanMD={3}

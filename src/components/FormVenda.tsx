@@ -17,13 +17,13 @@ import {
     InputSelect,
     ButtonSubmit,
     InputText,
-    OptionItem
+    Option
 } from '../components/forms/InputData';
 
-const Payments: Array<OptionItem> = [
-    { descricao: 'DINHEIRO', value: 0 },
-    { descricao: 'CREDITO', value: 1 },
-    { descricao: 'DEBITO', value: 2 }
+const Payments: Array<Option> = [
+    { value: 0, label: 'DINHEIRO' },
+    { value: 1, label: 'CREDITO' },
+    { value: 2, label: 'DEBITO' }
 ];
 
 function FormVenda() {
@@ -44,6 +44,7 @@ function FormVenda() {
             <HStack mt={4}>
                 <SimpleGrid columns={12} columnGap={3} rowGap={6} minW='full'>
                     <InputSelect
+                        name='formaPagamento'
                         descLabel='Forma de pagamento'
                         columSpanBase={12}
                         columSpanMD={12}

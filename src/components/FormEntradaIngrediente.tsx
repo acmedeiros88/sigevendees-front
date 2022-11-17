@@ -20,14 +20,14 @@ import {
     InputNumber,
     InputSelect,
     ButtonSubmit,
-    OptionItem
+    Option
 } from '../components/forms/InputData';
 import { FiTrash2, FiXSquare } from 'react-icons/fi';
 
-const produtos: Array<OptionItem> = [
-    { descricao: 'Farinha', value: 0 },
-    { descricao: 'Leite', value: 1 },
-    { descricao: 'Chocolate', value: 2 }
+const produtos: Array<Option> = [
+    { value: 0, label: 'Farinha' },
+    { value: 1, label: 'Leite' },
+    { value: 2, label: 'Chocolate' }
 ];
 
 function FormEntradaIngrediente() {
@@ -37,6 +37,7 @@ function FormEntradaIngrediente() {
             <HStack mt={2}>
                 <SimpleGrid columns={8} columnGap={3} rowGap={6} minW='full'>
                     <InputSelect
+                        name='produtoEntradaEstoque'
                         descLabel='Produto'
                         columSpanBase={8}
                         columSpanMD={8}

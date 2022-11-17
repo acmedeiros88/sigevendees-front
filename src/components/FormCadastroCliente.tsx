@@ -10,19 +10,19 @@ import {
     InputSelect,
     InputTextarea,
     ButtonSubmit,
-    OptionItem
+    Option
 } from '../components/forms/InputData';
 
-const cidades: Array<OptionItem> = [
-    { descricao: 'Foz do Iguaçu', value: 0 },
-    { descricao: 'Medianeira', value: 1 },
-    { descricao: 'Cascavel', value: 2 }
+const cidades: Array<Option> = [
+    { value: 0, label: 'Foz do Iguaçu' },
+    { value: 1, label: 'Medianeira' },
+    { value: 2, label: 'Cascavel' }
 ];
 
-const estados: Array<OptionItem> = [
-    { descricao: 'Paraná', value: 0 },
-    { descricao: 'Santa Catarina', value: 1 },
-    { descricao: 'Rio Grande do Sul', value: 2 }
+const estados: Array<Option> = [
+    { value: 0, label: 'Paraná' },
+    { value: 1, label: 'Santa Catarina' },
+    { value: 2, label: 'Rio Grande do Sul' }
 ];
 
 function FormCadastroCliente() {
@@ -77,25 +77,27 @@ function FormCadastroCliente() {
 
             <HStack mt={4}>
                 <SimpleGrid columns={12} columnGap={3} rowGap={6} minW='full'>
+                    <InputNumber
+                        descLabel='CEP'
+                        columSpanBase={6}
+                        columSpanMD={6}
+                        columSpanLG={2}
+                    />
                     <InputSelect
+                        name='estado'
+                        descLabel='Estado'
+                        columSpanBase={6}
+                        columSpanMD={6}
+                        columSpanLG={4}
+                        options={estados}
+                    />
+                    <InputSelect
+                        name='cidade'
                         descLabel='Cidade'
                         columSpanBase={12}
                         columSpanMD={12}
                         columSpanLG={6}
                         options={cidades}
-                    />
-                    <InputSelect
-                        descLabel='Estado'
-                        columSpanBase={6}
-                        columSpanMD={6}
-                        columSpanLG={2}
-                        options={estados}
-                    />
-                    <InputNumber
-                        descLabel='CEP'
-                        columSpanBase={6}
-                        columSpanMD={6}
-                        columSpanLG={4}
                     />
                 </SimpleGrid>
             </HStack>

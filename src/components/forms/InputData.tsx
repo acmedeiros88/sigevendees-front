@@ -8,13 +8,13 @@ import {
     Input,
     NumberInput,
     NumberInputField,
-    Select,
     Textarea
 } from '@chakra-ui/react';
+import Select from 'react-select';
 
-export interface OptionItem {
-    descricao: string;
-    value: number;
+export type Option = {
+    readonly value: string | number;
+    readonly label: string;
 }
 
 interface InputProps {
@@ -31,7 +31,11 @@ interface GridProps extends InputProps {
 }
 
 interface SelectProps extends InputProps {
-    options: readonly OptionItem[];
+    name: string;
+    defaultValue?: Option;
+    isLoading?: boolean;
+    isClearable?: boolean;
+    options: readonly Option[];
 }
 
 const ItemGrid = ({ columSpanBase, columSpanMD, columSpanLG, descLabel, children }: GridProps) => {
@@ -73,7 +77,24 @@ const InputText = ({ descLabel, descPlaceholder, columSpanBase, columSpanMD, col
     );
 };
 
-const InputSelect = ({ descLabel, descPlaceholder, columSpanBase, columSpanMD, columSpanLG, options }: SelectProps) => {
+// const InputSelect = ({ descLabel, descPlaceholder, columSpanBase, columSpanMD, columSpanLG, options }: SelectProps) => {
+//     return (
+//         <ItemGrid
+//             descLabel={descLabel}
+//             columSpanBase={columSpanBase}
+//             columSpanMD={columSpanMD}
+//             columSpanLG={columSpanLG}
+//         >
+//             <Select placeholder={descPlaceholder != null ? descPlaceholder : 'Selecionar...'}>
+//                 {options.map((item) => (
+//                     <option key={item.value} value={item.value}>{item.descricao}</option>
+//                 ))}
+//             </Select>
+//         </ItemGrid>
+//     );
+// };
+
+const InputSelect = ({ name, descLabel, descPlaceholder, columSpanBase, columSpanMD, columSpanLG, read_on: isDisabled, options, defaultValue, isLoading, isClearable }: SelectProps) => {
     return (
         <ItemGrid
             descLabel={descLabel}
@@ -81,11 +102,18 @@ const InputSelect = ({ descLabel, descPlaceholder, columSpanBase, columSpanMD, c
             columSpanMD={columSpanMD}
             columSpanLG={columSpanLG}
         >
-            <Select placeholder={descPlaceholder != null ? descPlaceholder : 'Selecionar...'}>
-                {options.map((item) => (
-                    <option key={item.value} value={item.value}>{item.descricao}</option>
-                ))}
-            </Select>
+            <Select
+                id={name}
+                name={name}
+                placeholder={descPlaceholder != null ? descPlaceholder : 'Selecionar...'}
+                className='basic-single'
+                classNamePrefix='select'
+                defaultValue={defaultValue}
+                isDisabled={isDisabled}
+                isLoading={isLoading}
+                isClearable={isClearable}
+                options={options}
+            />
         </ItemGrid>
     );
 };

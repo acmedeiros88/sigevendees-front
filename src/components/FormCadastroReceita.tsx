@@ -20,24 +20,24 @@ import {
     InputNumber,
     InputSelect,
     ButtonSubmit,
-    OptionItem
+    Option
 } from '../components/forms/InputData';
 import { FiTrash2, FiXSquare } from 'react-icons/fi';
 
-const tiposReceita: Array<OptionItem> = [
-    { descricao: 'DOCE', value: 0 },
-    { descricao: 'SALGADO', value: 1 }
+const tiposReceita: Array<Option> = [
+    { value: 0, label: 'DOCE' },
+    { value: 1, label: 'SALGADO' }
 ];
 
-const undsMedidaAvenda: Array<OptionItem> = [
-    { descricao: 'UND', value: 0 },
-    { descricao: 'CENTO', value: 1 }
+const undsMedidaAvenda: Array<Option> = [
+    { value: 0, label: 'UND' },
+    { value: 1, label: 'CENTO' }
 ];
 
-const produtos: Array<OptionItem> = [
-    { descricao: 'Farinha', value: 0 },
-    { descricao: 'Leite', value: 1 },
-    { descricao: 'Pote 250ml', value: 2 }
+const produtos: Array<Option> = [
+    { value: 0, label: 'Farinha' },
+    { value: 1, label: 'Leite' },
+    { value: 2, label: 'Pote 250ml' }
 ];
 
 function FormCadastroReceita() {
@@ -58,6 +58,7 @@ function FormCadastroReceita() {
             <HStack mt={4}>
                 <SimpleGrid columns={12} columnGap={3} rowGap={6} minW='full'>
                     <InputSelect
+                        name='tipoReceita'
                         descLabel='Tipo'
                         columSpanBase={12}
                         columSpanMD={12}
@@ -66,6 +67,7 @@ function FormCadastroReceita() {
                     />
 
                     <InputSelect
+                        name='vendaEm'
                         descLabel='Venda em'
                         columSpanBase={6}
                         columSpanMD={6}
@@ -102,6 +104,7 @@ function FormCadastroReceita() {
             <HStack mt={4}>
                 <SimpleGrid columns={12} columnGap={3} rowGap={6} minW='full'>
                     <InputSelect
+                        name='produtoReceita'
                         descLabel='Ingrediente/Embalagen'
                         columSpanBase={12}
                         columSpanMD={12}
