@@ -13,7 +13,6 @@ import {
     Tr,
     Td,
     Button,
-    GridItem,
     Flex
 } from '@chakra-ui/react';
 import {

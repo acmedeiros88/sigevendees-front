@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     IconButton,
     Flex,
@@ -10,7 +11,7 @@ import { FiMenu } from 'react-icons/fi';
 
 interface MobileProps extends FlexProps {
     onOpen: () => void;
-};
+}
 
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
     return (

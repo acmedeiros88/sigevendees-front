@@ -69,6 +69,6 @@ function Header() {
             </Flex>
         </HStack>
     );
-};
+}
 
 export default Header;
